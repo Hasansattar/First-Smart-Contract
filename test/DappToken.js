@@ -44,4 +44,20 @@ it('initializes the contract with the correct values', function(){
             assert.equal(adminBalance.toNumber(),1000000,'it alloctaes the initial supply to admin account')
         });
     });
-})
+
+     it('transfers token owbership', function(){
+         return DappToken.deployed().then(function(instance){
+             tokenInstance=instance;
+             return tokenInstance.transfer.call(accounts[1], 999999999999999999999);
+
+         // eslint-disable-next-line no-undef
+         }).then(assert.fail).catch(function(error){
+             // eslint-disable-next-line no-undef
+             assert(error.message.indexOf('revert') >=0,'error message must contain revert');
+         }) 
+     });
+
+
+
+
+});
