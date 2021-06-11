@@ -45,17 +45,17 @@ it('initializes the contract with the correct values', function(){
         });
     });
 
-     it('transfers token ownership', function(){
-         return DappToken.deployed().then(function(instance){
-             tokenInstance=instance;
-             return tokenInstance.transfer.call(accounts[1],99999999999999999999999);
+    //  it('transfers token ownership', function(){
+    //      return DappToken.deployed().then(function(instance){
+    //          tokenInstance=instance;
+    //          return tokenInstance.transfer.call(accounts[1],99999999999999999999999);
 
-         // eslint-disable-next-line no-undef
-         }).then(assert.fail).catch(function(error){
-             // eslint-disable-next-line no-undef
-             assert(error.message.indexOf('revert') >=0,'error message must contain revert');
-         });
-     });
+    //      // eslint-disable-next-line no-undef
+    //      }).then(assert.fail).catch(function(error){
+    //          // eslint-disable-next-line no-undef
+    //          assert(error.message.indexOf('revert') >=0,'error message must contain revert');
+    //      });
+    //  });
 
 
 
